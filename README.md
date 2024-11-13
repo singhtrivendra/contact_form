@@ -8,19 +8,19 @@ Some of the UI Images as shown below:-
    <table>
           <tr align="center">
             <td style="border-right: 1px solid #dddddd; padding: 10px;" width="100">
-              <img src="![page1](https://github.com/user-attachments/assets/dc599edd-d89a-40f6-8e0e-1a95f7bc29e5)" alt="Ques 1 page" width="80" />
+              <img src="https://github.com/user-attachments/assets/dc599edd-d89a-40f6-8e0e-1a95f7bc29e5" alt="Ques 1 page" width="80" />
               <br>
-              <strong>Explorer Badge</strong>
+              <strong>Page 1</strong>
             </td>
             <td style="border-right: 1px solid #dddddd; padding: 10px;" width="100">
-              <img src="![page1](https://github.com/user-attachments/assets/dc599edd-d89a-40f6-8e0e-1a95f7bc29e5)" alt="Ques 1 page" width="80" />
+              <img src="https://github.com/user-attachments/assets/dc599edd-d89a-40f6-8e0e-1a95f7bc29e5" alt="Ques 1 page" width="80" />
               <br>
-              <strong>Adventurer Badge</strong>
+              <strong>Page 2</strong>
             </td>
               <td style="border-right: 1px solid #dddddd; padding: 10px;" width="100">
-              <img src="![page1](https://github.com/user-attachments/assets/dc599edd-d89a-40f6-8e0e-1a95f7bc29e5)" alt="Ques 1 page" width="80" />
+              <img src="page1](https://github.com/user-attachments/assets/dc599edd-d89a-40f6-8e0e-1a95f7bc29e5" alt="Ques 1 page" width="80" />
               <br>
-              <strong>API Student Expert Postman</strong>
+              <strong>Page 3</strong>
             </td>
           </tr>
         </table>
