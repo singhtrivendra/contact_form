@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
-import 'result_page.dart';
+import 'result_page.dart'; // Ensure you import the ResultPage
 
 class SubmitPage extends StatelessWidget {
-  final int genderId; // Gender ID from the gender selection (e.g., 1 for Male, 2 for Female, etc.)
-  final int age; // Age input from the user
-  final File? selfieImage; // Selfie image captured by the user
-  final File? recordedAudio; // Audio recording file
-  final String gpsLocation; // GPS location in format "latitude, longitude"
-  final String submitTime; // Submission time in format "Y-m-d H:i:s"
+  final int genderId;
+  final int age;
+  final File? selfieImage;
+  final File? recordedAudio; // The recorded audio file
+  final String gpsLocation;
+  final String submitTime;
 
   SubmitPage({
     required this.genderId,
@@ -27,7 +27,7 @@ class SubmitPage extends StatelessWidget {
           genderId: genderId,
           age: age,
           selfieImage: selfieImage,
-          recordedAudio: recordedAudio,
+          recordedAudio: recordedAudio, // Passing the recorded audio
           gpsLocation: gpsLocation,
           submitTime: submitTime,
         ),
@@ -43,16 +43,14 @@ class SubmitPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Confirm your submission details below",
-              style: TextStyle(fontSize: 18),
-            ),
+            Text("Confirm your submission details below", style: TextStyle(fontSize: 18)),
             SizedBox(height: 20),
             ElevatedButton(
+                style: ElevatedButton.styleFrom(shape: const RoundedRectangleBorder(), backgroundColor:  Color.fromARGB(255, 194, 4, 4),) ,
               onPressed: () {
                 _navigateToResultPage(context);
               },
-              child: Text('Submit and View Results'),
+              child: Text('Submit and View Results',style: TextStyle(color: Colors.white),),
             ),
           ],
         ),

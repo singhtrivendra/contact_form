@@ -1,10 +1,12 @@
-import 'package:contact_form/screens/question3_page.dart';
 import 'package:flutter/material.dart';
+import 'package:contact_form/screens/question3_page.dart';
+import 'dart:io';
 
 class Question2Page extends StatefulWidget {
   final int genderId; // Gender ID passed from Question 1
+  final File? recordedAudio; // Audio file passed from Question1Page
 
-  Question2Page({required this.genderId});
+  Question2Page({required this.genderId, this.recordedAudio});
 
   @override
   _Question2PageState createState() => _Question2PageState();
@@ -16,9 +18,7 @@ class _Question2PageState extends State<Question2Page> {
   void _navigateToNextPage(BuildContext context) {
     String ageText = _ageController.text.trim();
 
-    // Validate if the age input is not empty and is a number
     if (ageText.isEmpty || int.tryParse(ageText) == null) {
-      // Show error if age is invalid
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -39,7 +39,11 @@ class _Question2PageState extends State<Question2Page> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Question3Page(genderId: widget.genderId, age: age),
+          builder: (context) => Question3Page(
+            genderId: widget.genderId,
+            age: age,
+            recordedAudio: widget.recordedAudio, // Passing the audio file
+          ),
         ),
       );
     }
@@ -54,14 +58,11 @@ class _Question2PageState extends State<Question2Page> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Q2) Type your age",
-              style: TextStyle(fontSize: 18),
-            ),
+            Text(" Type your age", style: TextStyle(fontSize: 18)),
             SizedBox(height: 20),
             TextField(
               controller: _ageController,
-              keyboardType: TextInputType.number, // Only numbers allowed
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Age',
                 border: OutlineInputBorder(),
@@ -69,8 +70,9 @@ class _Question2PageState extends State<Question2Page> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(shape: const RoundedRectangleBorder(), backgroundColor:  Color.fromARGB(255, 194, 4, 4),) ,
               onPressed: () => _navigateToNextPage(context),
-              child: Text("Next"),
+              child: Text("Next",style: TextStyle(color: Colors.white),),
             ),
           ],
         ),
